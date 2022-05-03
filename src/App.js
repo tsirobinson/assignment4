@@ -77,8 +77,9 @@ class App extends React.Component {
     return(
       <div className="App">
         <h1>Welcome to the React Router!</h1>
+        <h2>Balance: {this.state.accountBalance.toFixed(2)}</h2>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/debits" element={<Debits addDebit={this.addDebit} debits={this.state.debits} />} />
           <Route path="/credits" element={<Credits addCredit={this.addCredit} credits={this.state.credits} />} />
         </Routes>
