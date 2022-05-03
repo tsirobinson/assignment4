@@ -37,9 +37,9 @@ class App extends React.Component {
   }
 
   addDebit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    let { debits } = this.state.debits;
+    let debitsList = this.state.debits;
     let balance = this.state.accountBalance;
 
     const description = e.target[0].value;
@@ -51,13 +51,13 @@ class App extends React.Component {
 
     const newDebit = {description, amount, date};
     balance = balance - amount;
-    debits = [...debits, newDebit];
-    this.setState({accountBalance: balance, debits: debits});
+    debitsList = [...debitsList, newDebit];
+    this.setState({accountBalance: balance, debits: debitsList});
   }
 
   addCredit = (e) => {
-    e.preventDefault()
-    let { credits } = this.state.credits;
+    e.preventDefault();
+    let creditsList = this.state.credits;
     let balance = this.state.accountBalance;
 
     const description = e.target[0].value;
@@ -69,8 +69,8 @@ class App extends React.Component {
 
     const newCredit = {description, amount, date};
     balance = balance - amount;
-    credits = [...credits, newCredit];
-    this.setState({accountBalance: balance, credits: credits});
+    creditsList = [...creditsList, newCredit];
+    this.setState({accountBalance: balance, credits: creditsList});
   }
 
   render() {
@@ -80,7 +80,7 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/debits" element={<Debits addDebit={this.addDebit} debits={this.state.debits} />} />
-          <Route path="/credits" element={<Credits addCredit={this.addCredit} debits={this.state.credits} />} />
+          <Route path="/credits" element={<Credits addCredit={this.addCredit} credits={this.state.credits} />} />
         </Routes>
       </div>
     );
