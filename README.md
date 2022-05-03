@@ -1,5 +1,5 @@
 # Assignment 4
-## Tyler Robinson
+## Tyler Robinson (tsirobinson)
 
 - [X] Define a route for the Credits component
 - [X] Navigate to the Credits route from the Homepage
