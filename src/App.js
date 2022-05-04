@@ -68,7 +68,7 @@ class App extends React.Component {
     const date = today.getFullYear() + "-" + month.toString() + "-" + today.getDate().toString();
 
     const newCredit = {description, amount, date};
-    balance = balance - amount;
+    balance = balance + amount;
     creditsList = [...creditsList, newCredit];
     this.setState({accountBalance: balance, credits: creditsList});
   }
@@ -94,6 +94,7 @@ function Home() {
     <div>
       <h2>Welcome to the Bank Homepage</h2>
       <Link to="/debits">Debits</Link>
+      <h2> </h2>
       <Link to="/credits">Credits</Link>
     </div>
   );
